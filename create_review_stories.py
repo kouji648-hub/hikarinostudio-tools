@@ -79,7 +79,7 @@ def generate_html(review_list):
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                gap: 50px;
+                gap: 120px;
             }}
             .review-box {{
                 background: #f5f5f5;
