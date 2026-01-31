@@ -44,12 +44,13 @@ reviews_raw = [
 ]
 
 def generate_html(review_list):
-    """HTMLテンプレートを生成（サンプル画像に忠実、ランダムな傾き付き）"""
+    """HTMLテンプレートを生成（参考画像に近い大胆な傾きと配置）"""
     reviews_html = ""
-    for review in review_list:
-        rotation = random.uniform(-3, 3)
+    for i, review in enumerate(review_list):
+        rotation = random.uniform(-12, 12)
+        offset_x = random.randint(-30, 30)
         reviews_html += f'''
-        <div class="review-box" style="transform: rotate({rotation:.1f}deg);">
+        <div class="review-box" style="transform: rotate({rotation:.1f}deg) translateX({offset_x}px);">
             <div class="review-text">{review["text"]}</div>
         </div>
         '''
