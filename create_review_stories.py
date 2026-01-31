@@ -6,6 +6,7 @@ Instagramストーリーズ用の口コミ画像を生成
 
 import asyncio
 import os
+import random
 from playwright.async_api import async_playwright
 
 # 口コミデータ（原文・絵文字付き）
@@ -43,11 +44,12 @@ reviews_raw = [
 ]
 
 def generate_html(review_list):
-    """HTMLテンプレートを生成（サンプル画像に忠実）"""
+    """HTMLテンプレートを生成（サンプル画像に忠実、ランダムな傾き付き）"""
     reviews_html = ""
     for review in review_list:
+        rotation = random.uniform(-3, 3)
         reviews_html += f'''
-        <div class="review-box">
+        <div class="review-box" style="transform: rotate({rotation:.1f}deg);">
             <div class="review-text">{review["text"]}</div>
         </div>
         '''
