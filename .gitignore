@@ -1,0 +1,26 @@
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+credentials*
+tokens.json
+
+# Personal data
+reviews/
+*.csv
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
